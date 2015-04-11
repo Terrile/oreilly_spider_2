@@ -1,0 +1,280 @@
+2015-04-11 14:24:14+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: douban_spider)
+2015-04-11 14:24:14+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 14:24:14+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'douban_spider.spiders', 'SPIDER_MODULES': ['douban_spider.spiders'], 'BOT_NAME': 'douban_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 14:24:14+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 14:24:14+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 14:24:14+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 14:24:14+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 14:24:14+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 14:24:14+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 14:24:14+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 14:24:14+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 14:24:15+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/category/browse-subjects.do> (referer: None)
+2015-04-11 14:24:15+0800 [scrapy] INFO: start to parse url: http://shop.oreilly.com/category/browse-subjects.do
+2015-04-11 14:24:15+0800 [scrapy] INFO: failed to parse url: http://shop.oreilly.com/category/browse-subjects.do
+2015-04-11 14:24:15+0800 [scrapy] INFO: Invalid XPath: //ul[@id="contextual-nav"]/
+2015-04-11 14:24:15+0800 [oreillyspider] ERROR: Spider error processing <GET http://shop.oreilly.com/category/browse-subjects.do>
+	Traceback (most recent call last):
+	  File "C:\Python27\lib\site-packages\twisted\internet\base.py", line 1201, in mainLoop
+	    self.runUntilCurrent()
+	  File "C:\Python27\lib\site-packages\twisted\internet\base.py", line 824, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "C:\Python27\lib\site-packages\twisted\internet\defer.py", line 383, in callback
+	    self._startRunCallbacks(result)
+	  File "C:\Python27\lib\site-packages\twisted\internet\defer.py", line 491, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "C:\Python27\lib\site-packages\twisted\internet\defer.py", line 578, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\Projects\oreilly_spider\douban_spider\spiders\book_spider.py", line 43, in parse
+	    nav_area = hxs.xpath('//ul[@id="contextual-nav"]/')
+	  File "C:\Python27\lib\site-packages\scrapy\selector\unified.py", line 98, in xpath
+	    raise ValueError("Invalid XPath: %s" % query)
+	exceptions.ValueError: Invalid XPath: //ul[@id="contextual-nav"]/
+	
+2015-04-11 14:24:15+0800 [oreillyspider] INFO: Closing spider (finished)
+2015-04-11 14:24:15+0800 [oreillyspider] INFO: Dumping Scrapy stats:
+	{'downloader/request_bytes': 313,
+	 'downloader/request_count': 1,
+	 'downloader/request_method_count/GET': 1,
+	 'downloader/response_bytes': 26337,
+	 'downloader/response_count': 1,
+	 'downloader/response_status_count/200': 1,
+	 'finish_reason': 'finished',
+	 'finish_time': datetime.datetime(2015, 4, 11, 6, 24, 15, 729000),
+	 'log_count/DEBUG': 3,
+	 'log_count/ERROR': 1,
+	 'log_count/INFO': 10,
+	 'response_received_count': 1,
+	 'scheduler/dequeued': 1,
+	 'scheduler/dequeued/memory': 1,
+	 'scheduler/enqueued': 1,
+	 'scheduler/enqueued/memory': 1,
+	 'spider_exceptions/ValueError': 1,
+	 'start_time': datetime.datetime(2015, 4, 11, 6, 24, 14, 608000)}
+2015-04-11 14:24:15+0800 [oreillyspider] INFO: Spider closed (finished)
+2015-04-11 14:28:46+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: orielly_spider)
+2015-04-11 14:28:46+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 14:28:46+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'oreilly_spider.spiders', 'SPIDER_MODULES': ['oreilly_spider.spiders'], 'BOT_NAME': 'orielly_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 14:28:46+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 14:28:47+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 14:28:47+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 14:28:47+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 14:28:47+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 14:28:47+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 14:28:47+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 14:28:47+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 14:28:48+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/category/browse-subjects.do> (referer: None)
+2015-04-11 14:28:48+0800 [scrapy] INFO: start to parse url: http://shop.oreilly.com/category/browse-subjects.do
+2015-04-11 14:28:48+0800 [scrapy] INFO: failed to parse url: http://shop.oreilly.com/category/browse-subjects.do
+2015-04-11 14:28:48+0800 [scrapy] INFO: Invalid XPath: //ul[@id="contextual-nav"]/
+2015-04-11 14:28:48+0800 [oreillyspider] ERROR: Spider error processing <GET http://shop.oreilly.com/category/browse-subjects.do>
+	Traceback (most recent call last):
+	  File "C:\Python27\lib\site-packages\twisted\internet\base.py", line 1201, in mainLoop
+	    self.runUntilCurrent()
+	  File "C:\Python27\lib\site-packages\twisted\internet\base.py", line 824, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "C:\Python27\lib\site-packages\twisted\internet\defer.py", line 383, in callback
+	    self._startRunCallbacks(result)
+	  File "C:\Python27\lib\site-packages\twisted\internet\defer.py", line 491, in _startRunCallbacks
+	    self._runCallbacks()
+	--- <exception caught here> ---
+	  File "C:\Python27\lib\site-packages\twisted\internet\defer.py", line 578, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "D:\Projects\oreilly_spider\oreilly_spider\spiders\book_spider.py", line 43, in parse
+	    nav_area = hxs.xpath('//ul[@id="contextual-nav"]/')
+	  File "C:\Python27\lib\site-packages\scrapy\selector\unified.py", line 98, in xpath
+	    raise ValueError("Invalid XPath: %s" % query)
+	exceptions.ValueError: Invalid XPath: //ul[@id="contextual-nav"]/
+	
+2015-04-11 14:28:48+0800 [oreillyspider] INFO: Closing spider (finished)
+2015-04-11 14:28:48+0800 [oreillyspider] INFO: Dumping Scrapy stats:
+	{'downloader/request_bytes': 313,
+	 'downloader/request_count': 1,
+	 'downloader/request_method_count/GET': 1,
+	 'downloader/response_bytes': 26336,
+	 'downloader/response_count': 1,
+	 'downloader/response_status_count/200': 1,
+	 'finish_reason': 'finished',
+	 'finish_time': datetime.datetime(2015, 4, 11, 6, 28, 48, 59000),
+	 'log_count/DEBUG': 3,
+	 'log_count/ERROR': 1,
+	 'log_count/INFO': 10,
+	 'response_received_count': 1,
+	 'scheduler/dequeued': 1,
+	 'scheduler/dequeued/memory': 1,
+	 'scheduler/enqueued': 1,
+	 'scheduler/enqueued/memory': 1,
+	 'spider_exceptions/ValueError': 1,
+	 'start_time': datetime.datetime(2015, 4, 11, 6, 28, 47, 155000)}
+2015-04-11 14:28:48+0800 [oreillyspider] INFO: Spider closed (finished)
+2015-04-11 14:29:59+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: orielly_spider)
+2015-04-11 14:29:59+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 14:29:59+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'oreilly_spider.spiders', 'SPIDER_MODULES': ['oreilly_spider.spiders'], 'BOT_NAME': 'orielly_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 14:29:59+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 14:30:00+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 14:30:00+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 14:30:00+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 14:30:00+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 14:30:00+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 14:30:00+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 14:30:00+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 14:30:01+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/category/browse-subjects.do> (referer: None)
+2015-04-11 14:30:08+0800 [scrapy] INFO: start to parse url: http://shop.oreilly.com/category/browse-subjects.do
+2015-04-11 14:30:45+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: orielly_spider)
+2015-04-11 14:30:45+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 14:30:45+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'oreilly_spider.spiders', 'SPIDER_MODULES': ['oreilly_spider.spiders'], 'BOT_NAME': 'orielly_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 14:30:46+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 14:30:46+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 14:30:46+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 14:30:46+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 14:30:46+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 14:30:46+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 14:30:46+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 14:30:46+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 14:30:47+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/category/browse-subjects.do> (referer: None)
+2015-04-11 14:30:51+0800 [scrapy] INFO: start to parse url: http://shop.oreilly.com/category/browse-subjects.do
+2015-04-11 15:01:53+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: orielly_spider)
+2015-04-11 15:01:53+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 15:01:53+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'oreilly_spider.spiders', 'SPIDER_MODULES': ['oreilly_spider.spiders'], 'BOT_NAME': 'orielly_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 15:01:53+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 15:01:53+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 15:01:53+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 15:01:53+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 15:01:53+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 15:01:53+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 15:01:53+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 15:01:53+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 15:01:54+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/product/9781784393786.do> (referer: None)
+2015-04-11 15:05:26+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: orielly_spider)
+2015-04-11 15:05:26+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 15:05:26+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'oreilly_spider.spiders', 'SPIDER_MODULES': ['oreilly_spider.spiders'], 'BOT_NAME': 'orielly_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 15:05:26+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 15:05:26+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 15:05:26+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 15:05:26+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 15:05:26+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 15:05:26+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 15:05:26+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 15:05:26+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 15:05:27+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/product/9781784393786.do> (referer: None)
+2015-04-11 15:06:48+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: orielly_spider)
+2015-04-11 15:06:48+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 15:06:48+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'oreilly_spider.spiders', 'SPIDER_MODULES': ['oreilly_spider.spiders'], 'BOT_NAME': 'orielly_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 15:06:48+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 15:06:48+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 15:06:48+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 15:06:48+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 15:06:48+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 15:06:48+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 15:06:48+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 15:06:49+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 15:06:49+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/product/9781784393786.do> (referer: None)
+2015-04-11 15:07:39+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: orielly_spider)
+2015-04-11 15:07:39+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 15:07:39+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'oreilly_spider.spiders', 'SPIDER_MODULES': ['oreilly_spider.spiders'], 'BOT_NAME': 'orielly_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 15:07:40+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 15:07:40+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 15:07:40+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 15:07:40+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 15:07:40+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 15:07:40+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 15:07:40+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 15:07:40+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 15:07:41+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/product/9781784393786.do> (referer: None)
+2015-04-11 15:12:02+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: orielly_spider)
+2015-04-11 15:12:02+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 15:12:02+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'oreilly_spider.spiders', 'SPIDER_MODULES': ['oreilly_spider.spiders'], 'BOT_NAME': 'orielly_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 15:12:02+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 15:12:02+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 15:12:02+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 15:12:02+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 15:12:02+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 15:12:02+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 15:12:02+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 15:12:02+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 15:12:03+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/product/9781784393786.do> (referer: None)
+2015-04-11 15:14:14+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: orielly_spider)
+2015-04-11 15:14:14+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 15:14:14+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'oreilly_spider.spiders', 'SPIDER_MODULES': ['oreilly_spider.spiders'], 'BOT_NAME': 'orielly_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 15:14:14+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 15:14:14+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 15:14:14+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 15:14:14+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 15:14:14+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 15:14:14+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 15:14:14+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 15:14:14+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 15:14:17+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/product/9781784393786.do> (referer: None)
+2015-04-11 15:15:51+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: orielly_spider)
+2015-04-11 15:15:51+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 15:15:51+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'oreilly_spider.spiders', 'SPIDER_MODULES': ['oreilly_spider.spiders'], 'BOT_NAME': 'orielly_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 15:15:51+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 15:15:51+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 15:15:51+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 15:15:51+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 15:15:51+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 15:15:51+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 15:15:51+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 15:15:51+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 15:15:54+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/product/9781784393786.do> (referer: None)
+2015-04-11 15:16:48+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: orielly_spider)
+2015-04-11 15:16:48+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 15:16:48+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'oreilly_spider.spiders', 'SPIDER_MODULES': ['oreilly_spider.spiders'], 'BOT_NAME': 'orielly_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 15:16:48+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 15:16:49+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 15:16:49+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 15:16:49+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 15:16:49+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 15:16:49+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 15:16:49+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 15:16:49+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 15:16:49+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/product/9781784393786.do> (referer: None)
+2015-04-11 15:17:27+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: orielly_spider)
+2015-04-11 15:17:27+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 15:17:27+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'oreilly_spider.spiders', 'SPIDER_MODULES': ['oreilly_spider.spiders'], 'BOT_NAME': 'orielly_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 15:17:27+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 15:17:27+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 15:17:27+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 15:17:27+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 15:17:27+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 15:17:27+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 15:17:27+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 15:17:27+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 15:17:28+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/product/9781784393786.do> (referer: None)
+2015-04-11 15:19:07+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: orielly_spider)
+2015-04-11 15:19:07+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 15:19:07+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'oreilly_spider.spiders', 'SPIDER_MODULES': ['oreilly_spider.spiders'], 'BOT_NAME': 'orielly_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 15:19:07+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 15:19:07+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 15:19:07+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 15:19:07+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 15:19:07+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 15:19:07+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 15:19:07+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 15:19:07+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 15:19:10+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/product/9781784393786.do> (referer: None)
+2015-04-11 15:20:00+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: orielly_spider)
+2015-04-11 15:20:00+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 15:20:00+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'oreilly_spider.spiders', 'SPIDER_MODULES': ['oreilly_spider.spiders'], 'BOT_NAME': 'orielly_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 15:20:00+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 15:20:00+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 15:20:00+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 15:20:00+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 15:20:00+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 15:20:00+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 15:20:00+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 15:20:00+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 15:20:03+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/product/9781784393786.do> (referer: None)
+2015-04-11 15:29:11+0800 [scrapy] INFO: Scrapy 0.24.5 started (bot: orielly_spider)
+2015-04-11 15:29:11+0800 [scrapy] INFO: Optional features available: ssl, http11
+2015-04-11 15:29:11+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'oreilly_spider.spiders', 'SPIDER_MODULES': ['oreilly_spider.spiders'], 'BOT_NAME': 'orielly_spider', 'COOKIES_ENABLED': False, 'LOG_FILE': 'log.txt', 'DOWNLOAD_DELAY': 2}
+2015-04-11 15:29:11+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2015-04-11 15:29:12+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, RotateUserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-04-11 15:29:12+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-04-11 15:29:12+0800 [scrapy] INFO: Enabled item pipelines: JsonWithEncodingPipeline
+2015-04-11 15:29:12+0800 [oreillyspider] INFO: Spider opened
+2015-04-11 15:29:12+0800 [oreillyspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-04-11 15:29:12+0800 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6024
+2015-04-11 15:29:12+0800 [scrapy] DEBUG: Web service listening on 127.0.0.1:6081
+2015-04-11 15:29:13+0800 [oreillyspider] DEBUG: Crawled (200) <GET http://shop.oreilly.com/product/9781784393786.do> (referer: None)
