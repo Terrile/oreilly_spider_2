@@ -69,6 +69,7 @@ class BookSpider(scrapy.Spider):
             if items:
                 for item in items:
                     book_url = item.extract()
+                    book_url = 'http://shop.oreilly.com'+book_url
                     log.msg('Request for book: '+ book_url+' is sent out',level=log.INFO)
                     yield Request(url=book_url,callback=self.parse_book)
         except Exception,e:
