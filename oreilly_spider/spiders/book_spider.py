@@ -20,7 +20,7 @@ import time
 from pprint import pprint
 reload(sys)
 sys.setdefaultencoding('utf-8')
-
+#upload to github
 class BookSpider(scrapy.Spider):
     handle_httpstatus_list = [403,404]
     name = "oreillyspider"
